@@ -102,13 +102,13 @@ foreach ( $tsv as $record ) {
 					}
 				}	
 				mysqli_free_result($results);
-				echo "$record[0] $actor_id\n"; //prints the $actor_id only if the $record[0] is available
+				//echo "$record[0] $actor_id\n"; //prints the $actor_id only if the $record[0] is available
 			}
 
 			#code to insert id from spreadsheet or database
-			if ($record[0] == true || $actor_id == true) {
-				
-			}
+			if ( $record[0] != '' ) {
+				$record[0] = $actor_id;
+			 } 
 
 			# insert Applicant
 			$add_applicant = "insert into Applicants (Name,Phone,IndividualID,Nationality,Address,Place of birth,Date of birth,Gender,Primary School,Secondary School,ActorID) values ($record[5]  $record[6]  $record[7], $phone,'NULL','NULL',$record[13],'NULL','NULL',$record[8],'NULL','NULL',$actor_id)";
