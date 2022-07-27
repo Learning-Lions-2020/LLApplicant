@@ -70,6 +70,7 @@ foreach ( $tsv as $record ) {
 			$name = $record[5];  # Take from the corrected column
 			$phone = $record[11]; 
 			$email = $record[12];  # Take from the corrected column
+			$applicant_id = $record[0];
 
 			// for ($i=0; $i < count($record); $i++) { 
 			// 	echo "$record[$i] ";
@@ -80,6 +81,7 @@ foreach ( $tsv as $record ) {
 			// 	continue;
 			// }
 			
+
 			$phone2 = $phone;
 			$phone3 = $phone;
 			# Chop off the 254 from the phone and try to match without
@@ -90,7 +92,7 @@ foreach ( $tsv as $record ) {
 
 			$sql = "select ID, Name, Phone, Email /* $name */ from Actors where Phone = '$phone' OR Phone = '$phone2' OR Phone = '$phone3' OR Email = '$email'";
 			$actor_id = 'NULL';
-			$participant_id = 0;
+			$applicant_id = 0;
 			if ( $results = mysqli_query($conn, $sql)) {
 				
 				if ( mysqli_num_rows($results) == 1 ) {
@@ -100,19 +102,24 @@ foreach ( $tsv as $record ) {
 					}
 				}	
 				mysqli_free_result($results);
-				echo "$record[0] $actor_id\n";
+				echo "$record[0] $actor_id\n"; //prints the $actor_id only if the $record[0] is available
 			}
 
-			# Add code to insert Participant
-			$add_applicant = "insert into Applicants values ($record[0],'$record[]','$record[11]','$email'";
-			# Insert participant here
-			# echo "$add_participant\n";
-			if (mysqli_query($conn, $add_applicant)) {
-				echo "Participant added!";
-			  } else {
-				echo "Error: " . $add_applicant . "<br>" . mysqli_error($conn);
-				die("Failed to insert Participants");
-			  }
+			#code to insert id from spreadsheet or database
+			if ($record[0] == true || $actor_id == true) {
+				
+			}
+
+			# insert Applicant
+			$add_applicant = "insert into Applicants (Name,Phone,IndividualID,Nationality,Address,Place of birth,Date of birth,Gender,Primary School,Secondary School,ActorID) values ($record[5]  $record[6]  $record[7], $phone,'NULL','NULL',$record[13],'NULL','NULL',$record[8],'NULL','NULL',$actor_id)";
+
+			echo "$add_applicant\n";
+			// if (mysqli_query($conn, $add_applicant)) {
+			// 	echo "Applicant added!";
+			//   } else {
+			// 	echo "Error: " . $add_applicant . "<br>" . mysqli_error($conn);
+			// 	die("Failed to insert Applicant");
+			//   }
 		}
 	} else {
 			echo "Wrong column count on row $row\n" ;
