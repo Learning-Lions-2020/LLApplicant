@@ -114,7 +114,8 @@ foreach ( $tsv as $record ) {
 				$record[0] = $actor_id;
 			}
 			
-			#if actor_id is not available in the spreadsheet use database's actor_id
+			#if actor_id is not available in the spreadsheet use actor_id from the database
+			#this is not working, code must be wrong somehow
 			if ($record[0] == '') {
 				$actor_id = $actor_id;
 			}
