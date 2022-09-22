@@ -1,12 +1,15 @@
 <?php
 # get a connection to the mysql database
-function get_mysql_conn($servername, $username,$password) {
+function get_mysql_conn($servername, $username, $password) {
 // Create connection
 	$conn = new mysqli($servername, $username, $password, "LLApplication");
 
 // Check connection
 	if ($conn->connect_error) {
   		die("Connection failed: " . $conn->connect_error);
+	}
+	else{
+		echo "Connection succesful";
 	}
 	return $conn;	
 
@@ -52,7 +55,7 @@ $passwd = $argv[3];
 # $passwd = getPassword();
 # echo "\n";
 
-$conn = get_mysql_conn('lms-production.chyuyfoavfuw.eu-central-1.rds.amazonaws.com', $username,$passwd);
+$conn = get_mysql_conn('lms-production.chyuyfoavfuw.eu-central-1.rds.amazonaws.com', $username, $passwd);
 $tsv = tsvToArray($tsvFile);
 
 	
@@ -106,9 +109,15 @@ foreach ( $tsv as $record ) {
 			}
 
 			#code to insert id from spreadsheet or database
-			if ( $record[0] != '' ) {
+			#if actor_id is available in the spreadsheet use that as actor_id
+			if ($record[0] != '' ) {
 				$record[0] = $actor_id;
-			 } 
+			}
+			
+			#if actor_id is not available in the spreadsheet use database's actor_id
+			if ($record[0] == '') {
+				$actor_id = $actor_id;
+			}
 
 			# insert Applicant
 			$add_applicant = "insert into Applicants (Name,Phone,IndividualID,Nationality,Address,Place of birth,Date of birth,Gender,Primary School,Secondary School,ActorID) values ($record[5]  $record[6]  $record[7], $phone,'NULL','NULL',$record[13],'NULL','NULL',$record[8],'NULL','NULL',$actor_id)";
