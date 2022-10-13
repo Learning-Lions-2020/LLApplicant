@@ -26,13 +26,15 @@ $placeOfBirth = $_POST['Place-of-birth'];
 $dateOfBirth = $_POST['Date-of-birth'];
 $gender = $_POST['Gender'];
 $nameOfPrimarySchool = $_POST['Name-of-primary-school'];
+$_nameOfPrimarySchool = mysql_real_escape_string($nameOfPrimarySchool);
 $nameOfSecondarySchool = $_POST['Name-of-secondary-school'];
+$_nameOfSecondarySchool = mysql_real_escape_string($nameOfSecondarySchool);
 
 
 //insert personal information
 $insertPersonalInformation = "insert into Applicants (Name,Phone,IndividualID,Nationality,Address,Place_of_birth,Date_of_birth,Gender,Primary_School,Secondary_School) 
 values 
-('$familyName $firstName $otherName', '$phoneNumber', '$individualID', '$nationality', '$address', '$placeOfBirth', '$dateOfBirth', '$gender', '$nameOfPrimarySchool', '$nameOfSecondarySchool')";
+('$familyName $firstName $otherName', '$phoneNumber', '$individualID', '$nationality', '$address', '$placeOfBirth', '$dateOfBirth', '$gender', '$_nameOfPrimarySchool', '$_nameOfSecondarySchool')";
 
 if (mysqli_query($conn, $insertPersonalInformation)) 
 {
