@@ -29,6 +29,5 @@ Applicants.Name,
     (CASE WHEN QuestionnaireAnswers.QuestionID = 25 THEN QuestionnaireAnswers.Answer else 0 end) as Q25
 
 from Applicants
-join QuestionnaireAnswers on Applicants.ID = QuestionnaireAnswers.ApplicantID
-join QuestionnaireQuestions on QuestionnaireQuestions.ID = QuestionnaireAnswers.QuestionID
+join QuestionnaireAnswers on QuestionnaireAnswers.ApplicantID = Applicants.ID
 group by Applicants.ID;
