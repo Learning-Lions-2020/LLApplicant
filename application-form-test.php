@@ -1,8 +1,8 @@
 <?php
  
-$servername = "lms-production.chyuyfoavfuw.eu-central-1.rds.amazonaws.com";
-$username = "applicant_admin";
-$password = "ApplicatioN@2030";
+$servername = "lms-test2021.chyuyfoavfuw.eu-central-1.rds.amazonaws.com";
+$username = "LLadmin";
+$password = "LMSTestDB2040";
 $dbname = "LLApplication";
   
 // Create connection
@@ -18,6 +18,7 @@ if ($conn->connect_error)
 $familyName = mysqli_real_escape_string($conn, $_POST['Family-name']);
 $firstName = mysqli_real_escape_string($conn, $_POST['First-name']);
 $otherName = mysqli_real_escape_string($conn, $_POST['Other-name']);
+$applicantEmail = mysqli_real_escape_string($conn, $_POST['E-mail']);
 $phoneNumber = $_POST['Phone-number'];
 $individualID = $_POST['Individual-ID'];
 $nationality = mysqli_real_escape_string($conn,$_POST['Nationality']);
@@ -28,10 +29,20 @@ $gender = $_POST['Gender'];
 $nameOfPrimarySchool = mysqli_real_escape_string($conn, $_POST['Name-of-primary-school']);
 $nameOfSecondarySchool = mysqli_real_escape_string($conn, $_POST['Name-of-secondary-school']);
 
+if(isset($_POST["submit"])){
+    //email section
+    $senderEmail = 'bonface@learninglions.org';
+    $emailSubject = "Learning Lions Mobile Leap Application";
+    $emailBody = "Dear " . $firstName . "," . "\nYour Application has been received! We will contact you before this date";
+
+    $headers = "From:" . $senderEmail;
+
+    mail($applicantEmail,$emailSubject,$emailBody,$headers);
+}
 
 //insert personal information
-$insertPersonalInformation = "insert into Applicants (Name,Phone,IndividualID,Nationality,Address,Place_of_birth,Date_of_birth,Gender,Primary_School,Secondary_School) 
-values ('$familyName $firstName $otherName', '$phoneNumber', '$individualID', '$nationality', '$address', '$placeOfBirth', '$dateOfBirth', '$gender', '$nameOfPrimarySchool', '$nameOfSecondarySchool')";
+$insertPersonalInformation = "insert into Applicants (Name,Email,Phone,IndividualID,Nationality,Address,Place_of_birth,Date_of_birth,Gender,Primary_School,Secondary_School) 
+values ('$familyName $firstName $otherName', '$applicantEmail', '$phoneNumber', '$individualID', '$nationality', '$address', '$placeOfBirth', '$dateOfBirth', '$gender', '$nameOfPrimarySchool', '$nameOfSecondarySchool')";
 
 if (mysqli_query($conn, $insertPersonalInformation)) 
 {

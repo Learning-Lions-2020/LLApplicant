@@ -1,0 +1,509 @@
+<div class="application-container">
+
+    <form action="https://www.learninglions.org/application-form-test.php" method="post" autocomplete="on" enctype="multipart/form-data">
+    
+       <div class="row personal-info">
+            <div class="application-fname">
+                <label for="family-name">
+                    <input type="text" id="family-name" name="Family-name" placeholder="Family name" autocomplete="on" required>
+                </label>
+            </div>
+            <div class="application-lname">
+                 <label for="first-name">
+                   <input type="text" id="first-name" name="First-name" placeholder="First name" autocomplete="on" required>             
+              </label>
+            </div>
+            <div class="application-oname">
+                <label for="other-name">
+                    <input type="text" id="other-name" name="Other-name" placeholder="Other name">
+                </label>
+            </div>
+       </div>
+    
+       <div class="row">
+            <div class="application-email">
+                <label for="email">
+                    <input type="email" id="email" name="E-mail" placeholder="E-mail">
+                </label>
+            </div>
+            <div class="application-pnumber">
+                <label for="phone-number">
+                   <input type="text" id="phone-number" name="Phone-number" placeholder="Phone number" required>(If you don't have your own mobile Phone, please give a phone number on which you can be reached. It can be for exemple the number of a family member, or somebody responsible for you)          
+               </label>
+            </div>
+       </div>
+    
+       <div class="row">
+            <div class="application-individualno">
+                <label for="individual-ID">
+                    <input type="text" id="individual-ID" name="Individual-ID" placeholder="Individual-ID" required>
+    (Required for the refugees Community for verification by UNHCR)
+                </label>
+            </div>
+            <div class="application-nationality">
+                 <label for="nationality">
+                   <input type="text" id="nationality" name="Nationality" placeholder="Nationality" required>
+    (Required for the Refugees Community to determine refugee Status)          
+               </label>
+            </div>
+       </div>
+    
+       <div class="row">
+            <div class="application-residence">
+                <label for="address">
+                    <input type="text" id="address" name="Address" placeholder="Address of residence" required>
+                </label>
+            </div>
+            <div class="application-pofbirth">
+                <label for="place-of-birth">
+                   <input type="text" id="place-of-birth" name="Place-of-birth" placeholder="Place of birth" required>             
+                </label>
+            </div>
+       </div>
+    
+        <div class="row">
+            <div class="application-dob">
+                <label for="date-of-birth">
+                    <input type="text" id="date-of-birth" name="Date-of-birth" placeholder="Date of Birth (D/M/Y)"
+                        onfocus="(this.type='date')" required>
+                </label>
+            </div>
+            <div class="application-gender">Gender: 
+                <label class="gender">
+                    <input type="radio" name="Gender" id="gender" value="Male">
+                    <span class="checkmark"></span>Male
+                </label>
+                <label class="gender">
+                    <input type="radio" name="Gender" id="gender" value="Female">
+                    <span class="checkmark"></span>Female
+                </label>
+            </div>
+       </div>
+    
+           
+       <div class="row">
+            <div class="application-nprimary">
+                <label for="n-primary">
+                    <input type="text" id="name-of-primary-school" name="Name-of-primary-school" placeholder="Name of primary school/ final mark" required>
+                </label>
+            </div>
+            <div class="application-nsecondary">
+                <label for="n-secondary">
+                   <input type="text" id="name-of-secondary-school" name="Name-of-secondary-school" placeholder="Name of secondary school/ grade" required>             
+                </label> 
+            </div>
+       </div>   
+       
+    /*QUESTIONAIRE*/
+    
+        <div class="row-questions">
+            <h2 class="questions">questionnaire</h2>
+            <h5>All fields are mandatory</h5>
+            
+            <div class="application-q">
+                <p class="p-question">Q1. How did you hear about Learning Lions? (select one)</p>
+                <div class="row">
+                    <div class="application1">
+                        <label for="qs">
+                        <input type="text" id="question" name="Q1" placeholder="Individual (his/her name)" style="width:90%">
+                        </label>
+                    </div>
+                    <div class="application2">
+                        <label for="qs">
+                        <input type="text" id="question" name="Q1" placeholder="Learning Lions Graduate (write his/her name)" style="width:90%">             
+                        </label> 
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="application1">
+                        <label for="qs">
+                        <input type="text" id="question" name="Q1" placeholder="Organisation (write its name)" style="width:90%">
+                        </label>
+                    </div>
+                    <div class="application2">
+                        <label for="qs">
+                        <input type="text" id="question" name="Q1" placeholder="Startup Lions member (write his/her name)" style="width:90%">             
+                        </label> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="application1">
+                        <label for="qs">
+                        <input type="text" id="question" name="Q1" placeholder="Advertisement / Flyer / Poster (specify where)" style="width:90%">
+                        </label>
+                    </div>
+                    <div class="application2">
+                        <label for="qs">
+                        <input type="text" id="question" name="Q1" placeholder="Website (write it here with its url)" style="width:90%">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+    
+            <div class="application-q">
+                <p class="p-question">Q2. What is the highest level of education you have completed? (select one)</p>
+                <label class="question">
+                <input type="radio" name="Q2" value="None">
+                    <span class="checkmark"></span>None &nbsp; &nbsp;
+                </label>
+                <label class="question">
+                    <input type="radio" name="Q2" value="Standard 8">
+                    <span class="checkmark"></span>Standard 8 &nbsp; &nbsp;
+                </label>
+                <label class="question">
+                <input type="radio" name="Q2" value="Form 1">
+                    <span class="checkmark"></span>Form 1 &nbsp; &nbsp;
+                </label>
+                
+                <label class="question">
+                    <input type="radio" name="Q2" value="Form 2">
+                    <span class="checkmark"></span>Form 2 &nbsp; &nbsp;
+                </label>
+                <label class="question">
+                    <input type="radio" name="Q2" value="Form 3">
+                    <span class="checkmark"></span>Form 3
+                </label><br><br>
+                <label class="question">
+                    <input type="radio" name="Q2" value="Form 4">
+                    <span class="checkmark"></span>Form 4 &nbsp; &nbsp;
+                </label>
+                <label class="question">
+                    <input type="radio" name="Q2" value="College">
+                    <span class="checkmark"></span>College &nbsp; &nbsp;
+                </label>
+                <label class="question">
+                    <input type="radio" name="Q2" value="Some University">
+                    <span class="checkmark"></span>Some University &nbsp; &nbsp;
+                </label>
+                <label class="question">
+                    <input type="radio" name="Q2" value="Graduated University">
+                    <span class="checkmark"></span>Graduated University
+                </label>
+                
+                
+                <p class="p-question">Q3. Have you been diagnosed as suffering from any type of physical or mental impairment? (Select one)</p>
+                <label class="question">
+                <input type="radio" name="Q3" value="Yes">
+                    <span class="checkmark"></span>Yes
+                </label>
+                <label class="question">
+                    <input type="radio" name="Q3" value="No">
+                    <span class="checkmark"></span>No
+                </label>
+                
+                
+                <p class="p-question">Q4. Did you finish your education? (select one)</p>
+                <label class="question">
+                    <input type="radio" name="Q4" value="Yes">
+                    <span class="checkmark"></span>Yes
+                </label>
+                <label class="question">
+                    <input type="radio" name="Q4" value="No">
+                    <span class="checkmark"></span>No
+                </label><br>
+                <div class="row">
+                    
+                    <div>
+                        <label class="p-question"><span style="color: #6daa7d;"><br>If yes:</span>&nbsp; &nbsp;
+                    <input type="text" name="Q5" placeholder="Which year did you finish your education?" style="width:80%">
+                </label>
+                    </div>
+                    <div></div>
+                
+                </div>
+        
+                <p class="p-question">&nbsp;&nbsp;If no: What prevented you from continuing with your education? (please select one or many)</p>
+                <div class="row">
+                    <div>
+                        <label class="question no-input-q4" style="font-size:18px">
+            Did not want to continue studying.
+                        <input type="radio" name="Q6" value="Did not want to continue studying.">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="question no-input-q4" style="font-size:18px">
+            School / College / University fees too expensive
+                    <input type="radio" name="Q6" value="School, College or University fees too expensive">
+                    <span class="checkmark"></span>
+                    </label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div>
+                        <label class="question no-input-q4-2" style="font-size:18px">
+            Family responsibilities (financial or physical dependence of other family members, children, etc.)
+                        <input type="radio" name="Q6" value="Family responsibilities">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="question no-input-q4" style="font-size:18px">
+            Family disagreement
+                    <input type="radio" name="Q6" value="Family disagreement">
+                    <span class="checkmark"></span>
+                    </label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div>
+                        <label class="question no-input-q4" style="font-size:18px">
+            Others:                <input type="radio" name="Q6" value="Others">
+                        <span class="checkmark"></span>
+                        </label>
+                        <input type="text" name="Q6" placeholder="Specify" style="width:70%">
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+            
+            <p class="application-q">Q5. How interested are you in learning more about: Graphic and web design? (select one)</p>
+                <label class="question">
+                <input type="radio" name="Q7" value="Not interested">
+                    <span class="checkmark" ></span>Not interested &nbsp; &nbsp;
+                </label><br>
+                <label class="question">
+                <input type="radio" name="Q7" value="A little interested">
+                    <span class="checkmark"></span>A little interested
+                </label><br>
+                <label class="question">
+                    <input type="radio" name="Q7" value="Very interested">
+                    <span class="checkmark"></span>Very interested &nbsp; &nbsp;
+                </label>
+                
+            <p class="application-q">Q6. How interested are you in learning more about: Computer programming? (select one)</p>
+                <label class="question">
+                <input type="radio" name="Q8" value="Not interested">
+                    <span class="checkmark" ></span>Not interested &nbsp; &nbsp;
+                </label><br>
+                <label class="question">
+                <input type="radio" name="Q8" value="A little interested">
+                    <span class="checkmark"></span>A little interested
+                </label><br>
+                <label class="question">
+                    <input type="radio" name="Q8" value="Very interested">
+                    <span class="checkmark"></span>Very interested &nbsp; &nbsp;
+                </label>
+                 
+            <p class="application-q">Q7. How interested are you in learning more about: Film and Video editing? (select one)</p>
+                <label class="question">
+                <input type="radio" name="Q9" value="Not interested">
+                    <span class="checkmark" ></span>Not interested &nbsp; &nbsp;
+                </label><br>
+                <label class="question">
+                <input type="radio" name="Q9" value="A little interested">
+                    <span class="checkmark"></span>A little interested
+                </label><br>
+                <label class="question">
+                    <input type="radio" name="Q9" value="Very interested">
+                    <span class="checkmark"></span>Very interested &nbsp; &nbsp;
+                </label>
+                   
+            <p class="application-q">Q8. How interested are you in learning more about Web Development? (select one)</p>
+                <label class="question">
+                <input type="radio" name="Q10" value="Not interested">
+                    <span class="checkmark" ></span>Not interested &nbsp; &nbsp;
+                </label><br>
+                <label class="question">
+                <input type="radio" name="Q10" value="A little interested">
+                    <span class="checkmark"></span>A little interested
+                </label><br>
+                <label class="question">
+                    <input type="radio" name="Q10" value="Very interested">
+                    <span class="checkmark"></span>Very interested &nbsp; &nbsp;
+                </label>
+                
+            <p class="application-q">Q9. Can you commit to stay for 6 weeks to campus and are you willing to put in at least 40 hours per week for courses and private study? (select one)</p>
+                <label class="question">
+                <input type="radio" name="Q11" value="Yes">
+                    <span class="checkmark" ></span>Yes &nbsp; &nbsp;
+                </label>
+                <label class="question">
+                    <input type="radio" name="Q11" value="No">
+                    <span class="checkmark"></span>No &nbsp; &nbsp;
+                </label>
+                
+                <!--<p class="application-q">Q10. Do you have any current or future responsibilities (school, work, etc.) that would prevent you from attending classes from 8.30am to 7pm Monday through Friday for 3 months? (select one)</p>-->
+                <!--<label class="question">-->
+                <!--<input type="radio" name="Q10" value="Yes">-->
+                <!--    <span class="checkmark" ></span>Yes &nbsp; &nbsp;-->
+                <!--</label>-->
+                <!--<label class="question">-->
+                <!--    <input type="radio" name="Q10" value="No">-->
+                <!--    <span class="checkmark"></span>No &nbsp; &nbsp;-->
+                <!--</label>-->
+                
+                <p class="application-q">Q10. Would you be able to pay 3000 ksh commitment fee that can be earned back simply by attending classes on time, paying attention, and participating in session activities? (select one)</p>
+                <label class="question">
+                <input type="radio" name="Q12" value="Yes">
+                    <span class="checkmark" ></span>Yes &nbsp; &nbsp;
+                </label>
+                <label class="question">
+                    <input type="radio" name="Q12" value="No">
+                    <span class="checkmark"></span>No &nbsp; &nbsp;
+                </label>
+                
+                <p class="application-q">Q11. Do you have children aged 2-4 years old and require help from Learning Lions to help you facilitate care during the day for them, so that you can attend classes from 8.30am to 7pm? (select one)</p>
+                <div class="row">
+                    <div>
+                          <label class="question no-input-q4" style="font-size:18px">
+            No                <input type="radio" name="Q13" value="No">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="question no-input-q4" style="font-size:18px">
+            Yes                <input type="radio" name="Q13" value="Yes">
+                        <span class="checkmark"></span>
+                        </label>
+                        <input type="text" name="Q14" placeholder="Name and age of your children" style="width:70%">
+                    </div>
+                </div>
+                
+                <p class="application-q">Q12. Why are you interested in joining the Learning Lions 6-week Mobile LEAP program?</p>
+            
+                   
+                <div class="row">
+                    <div style="width: 100%">
+                        <textarea rows="4" name="Q15" placeholder="Message" required></textarea>
+                    </div>
+                  
+                </div>      
+                
+                <p class="application-q">Q13. Why is having knowledge and skills in Information & Communications Technology (ICT) important?</p>
+            
+                   
+                <div class="row">
+                    <div style="width: 100%">
+                        <textarea rows="4" name="Q16" placeholder="Message" required></textarea>
+                    </div>
+                  
+                </div>
+                
+                <p class="application-q">Q14. Please describe your previous experience using computers/technology.</p>
+            
+                   
+                <div class="row">
+                    <div style="width: 100%">
+                        <textarea rows="4" name="Q17" placeholder="Message" required></textarea>
+                    </div>
+                  
+                </div>
+                
+                <p class="application-q">Q15. What is something or someone in technology that inspires you?</p>
+            
+                   
+                <div class="row">
+                    <div style="width: 100%">
+                        <textarea rows="4" name="Q18" placeholder="Message" required></textarea>
+                    </div>
+                  
+                </div>    
+                
+                <p class="application-q">Q16. What is something that you have accomplished that you are very proud of?</p>
+            
+                   
+                <div class="row">
+                    <div style="width: 100%">
+                        <textarea rows="4" name="Q19" placeholder="Message" required></textarea>
+                    </div>
+                  
+                </div>
+                
+                <p class="application-q">Q17. What are your future plans in 2-3 years time from now?</p>
+            
+                   
+                <div class="row">
+                    <div style="width: 100%">
+                        <textarea rows="4" name="Q20" placeholder="Message" required></textarea>
+                    </div>
+                  
+                </div>
+                
+                <p class="application-q">Q18. How do you plan to use the skills that you have learned at Learning Lions after the course is finished?</p>
+            
+                   
+                <div class="row">
+                    <div style="width: 100%">
+                        <textarea rows="4" name="Q21" placeholder="Message" required></textarea>
+                    </div>
+                  
+                </div>           
+                
+                
+                <p class="application-q">Q19. Do you have drawing, photography, film or any other creative skills? (select one)</p>
+                
+                    <label class="question no-input-q19" style="font-size:18px">
+            No                <input type="radio" name="Q22" value="No">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="question no-input-q19" style="font-size:18px">
+            Yes         <input type="radio" name="Q22" value="Yes">
+                        <span class="checkmark"></span>
+                    </label>
+                    
+                    <label class="yes-input-q19" style="color: #6daa7d; font-size: 18px"><br>If Yes, indicate precisely which are those skills and give us some more details here below. Also attach to your application, sample(s) of your work
+                    
+                    <div class="row">
+                      <div style="width: 100%">
+                          <textarea rows="4" name="Q23" placeholder="Message"></textarea>
+                      </div>
+                  
+                    </div>  
+                  
+                <p class="application-q">Q20. Please include at least one reference. Include name, your relationship and the phone number where they can be reached.</p>
+            
+                   
+                <div class="row">
+                    <div style="width: 100%">
+                        <textarea rows="4" name="Q24" placeholder="Message" required></textarea>
+                    </div>
+                  
+                </div>
+                
+                <p class="application-q">Q21. Do you have any documents (for example a CV, certificates, drawing samples, etc.) that might be relevant? If yes, please hand them over together with this application form. (select one)</p>
+                <label class="question">
+                <input type="radio" name="Q25" value="Yes">
+                    <span class="checkmark" ></span>Yes &nbsp; &nbsp;
+                </label>
+                <label class="yes-input-q21">If Yes, please upload them (for more that one file, put them together in a zipped file)&nbsp;&nbsp;<input type="file" id="myFile" name="Q21FileUpload"> </label><br/>
+                <label class="question">
+                    <input type="radio" name="Q25" value="No">
+                    <span class="checkmark"></span>No &nbsp; &nbsp;
+                </label>
+                
+            <!--    <p class="application-q">Q22. Do you have a smart phone?</p>-->
+                
+            <!--        <label class="question no-input-q19" style="font-size:18px">-->
+            <!--No                <input type="radio" name="Q26" value="No">-->
+            <!--            <span class="checkmark"></span>-->
+            <!--        </label>-->
+            <!--        <label class="question no-input-q19" style="font-size:18px">-->
+            <!--Yes         <input type="radio" name="Q26" value="Yes">-->
+            <!--            <span class="checkmark"></span>-->
+            <!--        </label>-->
+                    
+            <!--        <label class="yes-input-q19" style="color: #6daa7d; font-size: 18px"><br>If Yes, what is the make and model?-->
+                    
+            <!--        <div class="row">-->
+            <!--          <div style="width: 100%">-->
+            <!--              <textarea rows="4" name="Q23" placeholder="Make and Model of your smart phone"></textarea>-->
+            <!--          </div>-->
+                  
+            <!--        </div>  -->
+            
+        </div>
+        
+        <div class="div-submit-btn">
+            <button class="apply-btn" id="apply-btn-submit" name="submit">Submit
+            <i class="fas fa-angle-right" aria-hidden="true"></i>
+            </button>
+        </div>
+        
+        
+    
+    </form>
+    
+    </div>
